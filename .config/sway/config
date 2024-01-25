@@ -42,6 +42,8 @@ output * bg /home/dluca/Images/wallpaper.png fill
           timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
           before-sleep 'swaylock -f -c 000000'
 
+exec_always rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 250
+
 
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -122,6 +124,10 @@ input "1739:52544:SYNA7DB5:01_06CB:CD40_Touchpad" {
 #
 # Workspaces:
 #
+
+    bindsym --no-repeat $mod+tab exec "echo 1 > /tmp/sovpipe"
+    bindsym --release $mod+tab exec "echo 0 > /tmp/sovpipe"
+
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -212,6 +218,8 @@ bindsym $mod+r mode "resize"
    bindsym XF86AudioLowerVolume exec pamixer -d 5
    bindsym XF86AudioRaiseVolume exec pamixer -i 5
 
+
+
 #
 # Status Bar:
 #
@@ -220,16 +228,18 @@ bar {
 c  swaybar_command waybar
 }
 
-# Rofi - Emoji
-bindsym $mod+m exec 'bash $HOME/.config/rofi/emoji/type-1/emoji.sh'
-bindsym $mod+t exec 'bash $HOME/.config/rofi/todo/todo.sh'
-bindsym $mod+n exec 'bash $HOME/.config/rofi/notes/notes.sh'
+# Rofi
+bindsym $mod+Shift+s exec 'bash $HOME/.config/sway/scripts/screenshot.sh'
+bindsym $mod+Shift+m exec 'bash $HOME/.config/rofi/emoji/type-1/emoji.sh'
+bindsym $mod+Shift+t exec 'bash $HOME/.config/rofi/todo/todo.sh'
+bindsym $mod+Shift+n exec 'bash $HOME/.config/rofi/notes/notes.sh'
 
 
 include /etc/sway/config.d/*
 
 exec 'pipewire-pulse'
 exec 'pipewire'
+exec_always 'export $(dbus-launch)'
 exec_always 'gammastep -l 48.812145:2.2635'
 
 

@@ -13,6 +13,7 @@
 
 dir="$HOME/.config/rofi/launchers/type-1"
 theme='style-9'
+export $(dbus-launch) # For prism launcher because Sway cannot source .profile...
 
 ## Run
 rofi \

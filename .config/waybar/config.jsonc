@@ -30,7 +30,7 @@
 	"on-click": "activate",
 	"format-icons": {
 		"urgent": "",
-		"active": "",
+		"focused": "",
 		"default": "󰧞",
 		"sort-by-number": true
 		}
