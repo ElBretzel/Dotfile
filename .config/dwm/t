@@ -1,0 +1,61 @@
+In file included from dwm.c:401:
+config.h:107:23: warning: initialization of 'void (*)(Monitor *)' from incompatible pointer type 'void (*)(Monitor *, int)' [-Wincompatible-pointer-types]
+  107 |         { "{F}",      fibonacci},
+      |                       ^~~~~~~~~
+config.h:107:23: note: (near initialization for 'layouts[1].arrange')
+config.h:216:9: error: expected expression before '{' token
+  216 | +       { MODKEY|ShiftMask,             XK_e,      exitdwm,       {0} },
+      |         ^
+dwm.c:1827:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ 1827 | sendevent(Window w, Atom proto, int mask, long d0, long d1, long d2, long d3,
+      | ^~~~~~~~~
+dwm.c:2159:6: warning: 'togglecolorfultag' defined but not used [-Wunused-function]
+ 2159 | void togglecolorfultag() {
+      |      ^~~~~~~~~~~~~~~~~
+dwm.c:2154:6: warning: 'togglecolorfultitle' defined but not used [-Wunused-function]
+ 2154 | void togglecolorfultitle() {
+      |      ^~~~~~~~~~~~~~~~~~~
+dwm.c:2108:6: warning: 'tagmon' defined but not used [-Wunused-function]
+ 2108 | void tagmon(const Arg *arg) {
+      |      ^~~~~~
+dwm.c:1473:6: warning: 'monocle' defined but not used [-Wunused-function]
+ 1473 | void monocle(Monitor *m) {
+      |      ^~~~~~~
+dwm.c:1178:6: warning: 'focusmon' defined but not used [-Wunused-function]
+ 1178 | void focusmon(const Arg *arg) {
+      |      ^~~~~~~~
+In file included from config.h:101:
+vanitygaps.c:684:6: warning: 'nrowgrid' defined but not used [-Wunused-function]
+  684 | void nrowgrid(Monitor *m) {
+      |      ^~~~~~~~
+vanitygaps.c:582:6: warning: 'grid' defined but not used [-Wunused-function]
+  582 | void grid(Monitor *m) {
+      |      ^~~~
+vanitygaps.c:527:6: warning: 'spiral' defined but not used [-Wunused-function]
+  527 | void spiral(Monitor *m) { fibonacci(m, 0); }
+      |      ^~~~~~
+vanitygaps.c:525:6: warning: 'dwindle' defined but not used [-Wunused-function]
+  525 | void dwindle(Monitor *m) { fibonacci(m, 1); }
+      |      ^~~~~~~
+vanitygaps.c:401:6: warning: 'deck' defined but not used [-Wunused-function]
+  401 | void deck(Monitor *m) {
+      |      ^~~~
+vanitygaps.c:340:6: warning: 'centeredfloatingmaster' defined but not used [-Wunused-function]
+  340 | void centeredfloatingmaster(Monitor *m) {
+      |      ^~~~~~~~~~~~~~~~~~~~~~
+vanitygaps.c:249:6: warning: 'centeredmaster' defined but not used [-Wunused-function]
+  249 | void centeredmaster(Monitor *m) {
+      |      ^~~~~~~~~~~~~~
+vanitygaps.c:200:13: warning: 'bstackhoriz' defined but not used [-Wunused-function]
+  200 | static void bstackhoriz(Monitor *m) {
+      |             ^~~~~~~~~~~
+vanitygaps.c:74:6: warning: 'incrogaps' defined but not used [-Wunused-function]
+   74 | void incrogaps(const Arg *arg) {
+      |      ^~~~~~~~~
+vanitygaps.c:69:6: warning: 'incrigaps' defined but not used [-Wunused-function]
+   69 | void incrigaps(const Arg *arg) {
+      |      ^~~~~~~~~
+vanitygaps.c:64:6: warning: 'incrgaps' defined but not used [-Wunused-function]
+   64 | void incrgaps(const Arg *arg) {
+      |      ^~~~~~~~
+make: *** [Makefile:12: dwm.o] Error 1
